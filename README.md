@@ -15,7 +15,7 @@ export IO_KEY="<my API key>"
 # References
 
 - https://github.com/pimoroni/sgp30-python
-- https://github.com/sbcshop/Air-Monitoring-Breakout
+- https://github.com/sbcshop/Air-Monitoring-Breakout (pms_a003.py comes straight from there)
 - io.adafruit.com
 
 # Other notes:
@@ -27,3 +27,10 @@ and I added these to my `/boot/config.txt`:
 enable_uart=1
 dtoverlay=disable-bt
 ```
+
+# TODO / Roadmap:
+
+- catch common errors / retrying if network fails, etc.
+- humidity / temperature monitoring too.
+- deployment helps (systemd files...)
+
