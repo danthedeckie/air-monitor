@@ -1,5 +1,6 @@
-import serial
 import time
+
+import serial
 
 
 class PMSReading(object):
@@ -22,6 +23,7 @@ class PMSReading(object):
 
 class SensorException(Exception):
     """Exception if no data can be read."""
+
     pass
 
 
@@ -35,8 +37,7 @@ class Sensor(object):
     def connect_hat(self, port="/dev/serial0", baudrate=9600, read_timeout=1):
         self.read_timeout = read_timeout
         try:
-            self.ser = serial.Serial(port=port, baudrate=baudrate,
-                                     timeout=read_timeout)
+            self.ser = serial.Serial(port=port, baudrate=baudrate, timeout=read_timeout)
         except serial.SerialException as e:
             raise SensorException(str(e))
 
@@ -58,18 +59,18 @@ class Sensor(object):
 
     def read(self):
         """Read a new value from the sensor."""
-        rec = b''
+        rec = b""
         timeout_time = time.monotonic() + self.read_timeout
         self.ser.reset_input_buffer()
         while True:
             inp = self.ser.read(1)
-            if inp == '':
+            if inp == "":
                 time.sleep(0.1)
                 continue
-            if inp == b'\x42':
+            if inp == b"\x42":
                 rec += inp
                 inp = self.ser.read(1)
-                if inp == b'\x4d':
+                if inp == b"\x4d":
                     rec += inp
                     rec += self.ser.read(30)
                     break
