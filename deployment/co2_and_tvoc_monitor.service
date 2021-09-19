@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitor CO2 and TVOC levels and send them to Adafruit.IO
+After=multi-user.target
+
+[Service]
+ExecStart=/home/pi/src/combined/.v/bin/python3 /home/pi/src/combined/read_co2_and_tvoc_many.py
+EnvironmentFile=/etc/adafruit_io.conf
+User=pi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
