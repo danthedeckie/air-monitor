@@ -23,7 +23,7 @@ air_mon.connect_hat(port="/dev/ttyAMA0", baudrate=9600)
 
 while True:
     values = air_mon.read()
-    print("{},{},{}".format(values.pm10_cf1, values.pm25_cf1, values.pm100_cf1))
+    # print("{},{},{}".format(values.pm10_cf1, values.pm25_cf1, values.pm100_cf1))
     df.post(PM10, values.pm10_cf1)
     df.post(PM25, values.pm25_cf1)
     df.post(PM100, values.pm100_cf1)

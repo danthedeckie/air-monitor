@@ -34,7 +34,7 @@ sys.stdout.write("\n")
 
 while True:
     result = sgp30.get_air_quality()
-    print("%s,%s" % (result.equivalent_co2, result.total_voc))
+    #print("%s,%s" % (result.equivalent_co2, result.total_voc))
     df.post(CO2, result.equivalent_co2)
     df.post(TVOC, result.total_voc)
     sys.stdout.flush()
