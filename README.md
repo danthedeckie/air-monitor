@@ -33,6 +33,11 @@ dtoverlay=disable-bt
 
 # TODO / Roadmap:
 
+- Quiet mode (so it can run w/o posting things to a local log file & disk IO on pi)
+- Better install / test scripts
+- Common interfaces for monitoring device & logging output
+- Sampling (eg. read values ever second, post average or peak or trough every 30 seconds to logs..)
 - catch common errors / retrying if network fails, etc.
 - humidity / temperature monitoring too.
 - deployment helps (systemd files...)
+- alternative logging outputs (Sqlite? prometheus? other HTTP endpoints for remote logging? local tiny screen?)
