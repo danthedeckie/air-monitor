@@ -1,3 +1,4 @@
 adafruit-io==2.5.0
 pimoroni-sgp30==0.0.2
-pyserial
+pyserial==3.5
+adafruit-circuitpython-shtc3==1.1.2

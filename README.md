@@ -1,6 +1,9 @@
 # Air monitoring -> Adafruit IO
 
-This project takes data from an SGP30 (CO2 and TVOC) and PMS A003 (PM1, PM2.5, PM10) values
+This project takes data from an:
+- SGP30 (CO2 and TVOC over I2C)
+- PMS A003 (PM1, PM2.5, PM10)
+- SHTC3 (temperature and relative humidity over I2C)
 and pushes them to Adafruit IO.
 
 # TO USE:
@@ -20,7 +23,7 @@ export IO_KEY="<my API key>"
 
 # Other notes:
 
-To get the 2 components working, I needed to turn ON the I2C interface w/ `raspbi-config`,
+To get the 3 components working, I needed to turn ON the I2C interface w/ `raspbi-config`,
 and I added these to my `/boot/config.txt`:
 
 ```ini
@@ -33,4 +36,3 @@ dtoverlay=disable-bt
 - catch common errors / retrying if network fails, etc.
 - humidity / temperature monitoring too.
 - deployment helps (systemd files...)
-
