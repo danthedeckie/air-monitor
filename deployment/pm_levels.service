@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitor PM1, PM2.5 and PM10 levels
+After=multi-user.target
+
+[Service]
+ExecStart=/home/pi/src/combined/.v/bin/python3 /home/pi/src/combined/read_pms_many.py
+EnvironmentFile=/etc/adafruit_io.conf
+User=pi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
