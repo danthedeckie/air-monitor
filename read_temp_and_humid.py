@@ -1,8 +1,8 @@
 import sys
 import time
 
-import board
 import adafruit_shtc3
+import board
 
 from df_aio import DFAIO
 
