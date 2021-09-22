@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitor Temperature and Relative Humidity
+After=multi-user.target
+
+[Service]
+ExecStart=/home/pi/src/combined/.v/bin/python3 /home/pi/src/combined/read_temp_and_humid.py
+EnvironmentFile=/etc/adafruit_io.conf
+User=pi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
